@@ -4,8 +4,12 @@ const app = express();
 const port = 3000
 
 //2. define a simple route
-app.get("/", (req, res) => {
-    res.send("Oladimeji Hannah, how far na, i don sabi build website o, dont play wifff me!!!!");
+app.get("/add/:num1/:num2", (req, res) => {
+    const num1 = Number(req.params.num1);
+    const num2 = Number(req.params.num2);
+
+    const result = num1 + num2;
+    res.send(`Result: ${result}`);
 });
 
 //3. start the server
